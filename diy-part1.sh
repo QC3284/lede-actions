@@ -31,7 +31,7 @@ sed -i '$a src-git small https://github.com/kenzok8/small' feeds.conf.default
 #git clone https://github.com/jerrykuku/luci-app-jd-dailybonus package/molun/luci-app-jd-dailybonus
 #git clone https://github.com/sirpdboy/luci-theme-opentopd package/molun/luci-theme-opentopd
 #git clone https://github.com/xiaoqingfengATGH/luci-theme-infinityfreedom package/molun/luci-theme-infinityfreedom
-#git clone -b 18.06 https://github.com/garypang13/luci-theme-edge package/molun/luci-theme-edge
-#git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon package/molun/luci-theme-argon
-#git clone https://github.com/jerrykuku/luci-app-argon-config package/molun/luci-app-argon-config
+git clone -b 18.06 https://github.com/garypang13/luci-theme-edge package/molun/luci-theme-edge
+git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon package/molun/luci-theme-argon
+git clone https://github.com/jerrykuku/luci-app-argon-config package/molun/luci-app-argon-config
 
