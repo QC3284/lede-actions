@@ -27,18 +27,6 @@ msgstr "-- 更多选项 --"
 msgid "-- Please choose --"
 msgstr "-- 请选择 --"
 
-msgid "Compiler author"
-msgstr "编译作者"
- 
-msgid "index"
-msgstr "指数"
- 
-msgid "Urban weather"
-msgstr "城市天气"
- 
-msgid "weather"
-msgstr "天气"
-
 msgid "-- custom --"
 msgstr "-- 自定义 --"
 
@@ -182,6 +170,18 @@ msgstr "ANSI T1.413"
 
 msgid "APN"
 msgstr "APN"
+
+msgid "Compiler author"
+msgstr "编译作者"
+ 
+msgid "index"
+msgstr "指数"
+ 
+msgid "Urban weather"
+msgstr "城市天气"
+ 
+msgid "weather"
+msgstr "天气"
 
 msgid "Architecture"
 msgstr "架构"
