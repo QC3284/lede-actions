@@ -73,13 +73,20 @@ jobs:
 
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
+      
+    - name: Install 233
+      run: mv -f indexa.htm openwrt/package/lean/autocore/files/arm/index.htm && mv -f indexb.htm openwrt/package/lean/autocore/files/x86/index.htm && mv -f banner openwrt/package/base-files/files/etc/ && mv -f base.po openwrt/feeds/luci/modules/luci-base/po/zh-cn/
 
+    - name: Downlaod Config
+      run: |
+         cd openwrt
+         wget http://110.42.14.112:45222/1.config -O .config
+      
     - name: Load custom configuration
       run: |
         [ -e files ] && mv files openwrt/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x $DIY_P2_SH
-        mv -f indexa.htm openwrt/package/lean/autocore/files/arm/index.htm && mv -f indexb.htm openwrt/package/lean/autocore/files/x86/index.htm && mv -f banner openwrt/package/base-files/files/etc/ && mv -f base.po openwrt/feeds/luci/modules/luci-base/po/zh-cn/
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
 
