@@ -100,7 +100,6 @@ jobs:
     - name: Download package
       id: package
       run: |
-        mv .config openwrt/
         cd openwrt
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
