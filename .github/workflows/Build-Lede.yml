@@ -56,10 +56,10 @@ jobs:
         sudo mkdir -p /workdir
         sudo chown $USER:$GROUPS /workdir
 
-    - name: Load package
-      run: |
-         sudo chmod 777 diy3.sh
-         bash diy3.sh
+#    - name: Load package
+#      run: |
+#         sudo chmod 777 diy3.sh
+#         bash diy3.sh
          
     - name: Clone source code
       working-directory: /workdir
