@@ -113,6 +113,7 @@ jobs:
     - name: Compile the firmware
       id: compile
       run: |
+        echo "### Start compiling Lede! :rocket:" >> $GITHUB_STEP_SUMMARY
         cd openwrt
         echo -e "$(nproc) thread compile"
         make -j16 || make -j16 || make -j16 V=s
@@ -170,6 +171,7 @@ jobs:
       id: tag
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       run: |
+        echo "### Generate release tag :heavy_check_mark:" >> $GITHUB_STEP_SUMMARY
         echo "release_tag=$(date +"%Y.%m.%d-%H%M")" >> $GITHUB_OUTPUT
         touch release.txt
         [ $UPLOAD_COWTRANSFER = true ] && echo "🔗 [Cowtransfer](${{ steps.cowtransfer.outputs.url }})" >> release.txt
