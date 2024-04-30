@@ -56,6 +56,11 @@ jobs:
         sudo mkdir -p /workdir
         sudo chown $USER:$GROUPS /workdir
 
+    - name: Load custom feeds
+      run: |
+         sudo chmod 777 diy3.sh
+         bash diy3.sh
+         
     - name: Clone source code
       working-directory: /workdir
       run: |
@@ -82,7 +87,7 @@ jobs:
     - name: Downlaod Config
       run: |
          cd openwrt
-         wget https://raw.githubusercontent.com/QC3284/openwrt-actions-config/main/1.config -O .config
+         wget https://raw.githubusercontent.com/QC3284/openwrt-actions-config/main/3.config -O .config
       
     - name: Load custom configuration
       run: |
