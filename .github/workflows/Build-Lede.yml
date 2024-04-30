@@ -64,6 +64,7 @@ jobs:
     - name: Clone source code
       working-directory: /workdir
       run: |
+        echo "### Start pulling source code! :triangular_flag_on_post:" >> $GITHUB_STEP_SUMMARY
         df -hT $PWD
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
@@ -82,7 +83,10 @@ jobs:
       run: cd openwrt && ./scripts/feeds install -a
       
     - name: Move DIY-Config
-      run: mv -f indexa.htm openwrt/package/lean/autocore/files/arm/index.htm && mv -f indexb.htm openwrt/package/lean/autocore/files/x86/index.htm && mv -f banner openwrt/package/base-files/files/etc/ && mv -f base.po openwrt/feeds/luci/modules/luci-base/po/zh-cn/
+      run: mv -f indexa.htm openwrt/package/lean/autocore/files/arm/index.htm 
+           mv -f indexb.htm openwrt/package/lean/autocore/files/x86/index.htm 
+           mv -f banner openwrt/package/base-files/files/etc/
+           mv -f base.po openwrt/feeds/luci/modules/luci-base/po/zh-cn/
 
     - name: Downlaod Config
       run: |
