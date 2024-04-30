@@ -56,7 +56,7 @@ jobs:
         sudo mkdir -p /workdir
         sudo chown $USER:$GROUPS /workdir
 
-    - name: Load custom feeds
+    - name: Load package
       run: |
          sudo chmod 777 diy3.sh
          bash diy3.sh
