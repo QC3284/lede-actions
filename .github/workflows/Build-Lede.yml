@@ -87,7 +87,7 @@ jobs:
     - name: Downlaod Config
       run: |
          cd openwrt
-         wget https://raw.githubusercontent.com/QC3284/openwrt-actions-config/main/3.config -O .config
+         wget https://raw.githubusercontent.com/QC3284/openwrt-actions-config/main/4.config -O .config
       
     - name: Load custom configuration
       run: |
