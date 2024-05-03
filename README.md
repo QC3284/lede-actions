@@ -13,7 +13,7 @@ forked from [P3TERX/Actions-OpenWrt](https://github.com/P3TERX/Actions-OpenWrt)
 !!!!!注意，本库大部分内容已被修改，如需使用，请到 https://github.com/molun/Actions-LEDE !!!!!
 ---由QC3284编辑---2024.5.1
 - 默认采用[Lean's lede](https://github.com/coolsnowwolf/lede)源码编译
-- 默认IP地址：192.168.2.1
+- 默认IP地址：192.168.5.1
 - 默认用户名：root
 - 默认登录密码：password
 
