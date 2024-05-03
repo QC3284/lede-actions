@@ -82,7 +82,7 @@ jobs:
       run: cd openwrt && ./scripts/feeds install -a
       
     - name: Move DIY-Config
-      run: mv -f indexa.htm openwrt/package/lean/autocore/files/arm/index.htm && mv -f indexb.htm openwrt/package/lean/autocore/files/x86/index.htm && mv -f banner openwrt/package/base-files/files/etc/ && mv -f base.po openwrt/feeds/luci/modules/luci-base/po/zh-cn/
+      run: cp -f indexa.htm openwrt/package/lean/autocore/files/arm/index.htm && cp -f indexb.htm openwrt/package/lean/autocore/files/x86/index.htm && cp -f banner openwrt/package/base-files/files/etc/banner && cp -f base.po openwrt/feeds/luci/modules/luci-base/po/zh-cn/base.po
 
     - name: Downlaod Config
       run: |
