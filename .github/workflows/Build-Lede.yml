@@ -88,7 +88,11 @@ jobs:
       run: |
          cd openwrt
          wget https://raw.githubusercontent.com/QC3284/openwrt-actions-config/main/5.config -O .config
-      
+    
+    - name: Update make
+      run: |
+        make menuconfig
+
     - name: Load custom configuration
       run: |
         chmod +x $DIY_P2_SH
