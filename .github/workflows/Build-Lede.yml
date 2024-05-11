@@ -92,7 +92,7 @@ jobs:
     - name: Update make
       run: |
         cd openwrt
-        make menuconfig -j8 V=99
+        make menuconfig -j8 V=99 -i
 
     - name: Load custom configuration
       run: |
