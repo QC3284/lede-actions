@@ -84,19 +84,12 @@ jobs:
     - name: Download DIY-Config
       run: cd openwrt/package/lean/autocore/files/arm/
            sudo rm -rf index.htm
-           ls
            curl https://raw.githubusercontent.com/QC3284/openwrt-actions-config/main/indexa.htm -o index.htm
-           ls
            cd $GITHUB_WORKSPACE/openwrt/package/lean/autocore/files/x86/
-           ls
            sudo rm -rf index.htm
-           ls
            curl https://raw.githubusercontent.com/QC3284/openwrt-actions-config/main/indexb.htm -o index.htm
-           ls
            cd $GITHUB_WORKSPACE/openwrt/package/base-files/files/etc/
-           ls
            sudo rm -rf banner
-           ls
            curl https://raw.githubusercontent.com/QC3284/openwrt-actions-config/main/banner -o banner
            ls
            
