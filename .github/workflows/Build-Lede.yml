@@ -85,10 +85,12 @@ jobs:
       run: cd openwrt/package/lean/autocore/files/arm/
            sudo rm -rf index.htm
            wget https://raw.githubusercontent.com/QC3284/openwrt-actions-config/main/indexa.htm -o index.htm
-           cd "$GITHUB_WORKSPACE/openwrt/package/lean/autocore/files/x86/"
+           cd $GITHUB_WORKSPACE/openwrt
+           cd package/lean/autocore/files/x86/
            sudo rm -rf index.htm
            wget https://raw.githubusercontent.com/QC3284/openwrt-actions-config/main/indexb.htm -o index.htm
-           cd "$GITHUB_WORKSPACE/openwrt/package/base-files/files/etc/"
+           cd $GITHUB_WORKSPACE/openwrt/
+           cd package/base-files/files/etc/
            sudo rm -rf banner
            wget https://raw.githubusercontent.com/QC3284/openwrt-actions-config/main/banner -o banner
            ls
