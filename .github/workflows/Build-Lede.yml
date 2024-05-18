@@ -81,14 +81,31 @@ jobs:
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
       
-    - name: Move DIY-Config
-      run: cp -f indexa.htm openwrt/package/lean/autocore/files/arm/index.htm && cp -f indexb.htm openwrt/package/lean/autocore/files/x86/index.htm && cp -f banner openwrt/package/base-files/files/etc/banner && cp -f base.po openwrt/feeds/luci/modules/luci-base/po/zh-cn/base.po
-
+    - name: Download DIY-Config
+      run: cd openwrt/package/lean/autocore/files/arm/
+           ls
+           sudo rm -rf index.htm
+           ls
+           wget https://raw.githubusercontent.com/QC3284/openwrt-actions-config/main/indexa.htm -o index.htm
+           ls
+           cd $GITHUB_WORKSPACE/openwrt/package/lean/autocore/files/x86/
+           ls
+           sudo rm -rf index.htm
+           ls
+           wget https://raw.githubusercontent.com/QC3284/openwrt-actions-config/main/indexb.htm -o index.htm
+           ls
+           cd $GITHUB_WORKSPACE/openwrt/package/base-files/files/etc/
+           ls
+           sudo rm -rf banner
+           ls
+           wget https://raw.githubusercontent.com/QC3284/openwrt-actions-config/main/banner -o banner
+           ls
+           
     - name: Downlaod Config
       run: |
          cd openwrt
          wget https://raw.githubusercontent.com/QC3284/openwrt-actions-config/main/5.config -O .config
-    
+         
     - name: Update make
       run: |
         cd openwrt
@@ -120,7 +137,7 @@ jobs:
       run: |
         cd openwrt
         echo -e "$(nproc) thread compile"
-        make -j8  || make -j8 || make -j8
+        make -j8  || make -j8 V=s || make -j8 V=99
         echo "status=success" >> $GITHUB_STATE
         grep '^CONFIG_TARGET.*DEVICE.*=y' .config | sed -r 's/.*DEVICE_(.*)=y/\1/' > DEVICE_NAME
         [ -s DEVICE_NAME ] && echo "DEVICE_NAME=_$(cat DEVICE_NAME)" >> $GITHUB_ENV
