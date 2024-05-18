@@ -86,19 +86,19 @@ jobs:
            ls
            sudo rm -rf index.htm
            ls
-           wget https://raw.githubusercontent.com/QC3284/openwrt-actions-config/main/indexa.htm -o index.htm
+           curl https://raw.githubusercontent.com/QC3284/openwrt-actions-config/main/indexa.htm -o index.htm
            ls
            cd $GITHUB_WORKSPACE/openwrt/package/lean/autocore/files/x86/
            ls
            sudo rm -rf index.htm
            ls
-           wget https://raw.githubusercontent.com/QC3284/openwrt-actions-config/main/indexb.htm -o index.htm
+           curl https://raw.githubusercontent.com/QC3284/openwrt-actions-config/main/indexb.htm -o index.htm
            ls
            cd $GITHUB_WORKSPACE/openwrt/package/base-files/files/etc/
            ls
            sudo rm -rf banner
            ls
-           wget https://raw.githubusercontent.com/QC3284/openwrt-actions-config/main/banner -o banner
+           curl https://raw.githubusercontent.com/QC3284/openwrt-actions-config/main/banner -o banner
            ls
            
     - name: Downlaod Config
