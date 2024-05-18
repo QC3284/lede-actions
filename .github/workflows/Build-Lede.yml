@@ -93,7 +93,8 @@ jobs:
         cd $GITHUB_WORKSPACE/openwrt/
         cd package/base-files/files/etc/
         sudo rm -rf banner
-        wget https://raw.githubusercontent.com/QC3284/openwrt-actions-config/main/banner -o banner
+        wget https://raw.githubusercontent.com/QC3284/openwrt-actions-config/main/banner -o 1.banner
+        mv 1.banner banner
         ls
            
     - name: Downlaod Config
